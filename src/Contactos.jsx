@@ -292,7 +292,7 @@ export default function Contactos() {
         {/* Bottom Section: Full-Width Horizontal Landscape Banner / Map Context */}
         <div className="relative w-full h-[450px] md:h-[520px] rounded-[2px] overflow-hidden shadow-2xl group border border-stone-200 animate-fade-up">
           <div
-            className="absolute inset-0 bg-[url('/quinta6.jpeg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+            className="absolute inset-0 bg-[url('quinta6.jpeg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
             style={{ filter: "brightness(90%) contrast(105%)" }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1C2826]/90 via-[#1C2826]/30 to-transparent" />

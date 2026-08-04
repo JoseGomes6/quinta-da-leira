@@ -11,17 +11,17 @@ export default function Quinta() {
 
   const heroImages = [
     {
-      src: "/quinta5.jpeg",
+      src: "quinta5.jpeg",
       subtitle: "Peso da Régua, Vila Real",
       title: "Encostas verticais banhadas por luz pura",
     },
     {
-      src: "/b3.jpeg",
+      src: "b3.jpeg",
       subtitle: "Arquitetura do Douro",
       title: "Espaços únicos desenhados para o seu conforto absoluto",
     },
     {
-      src: "/detalhe12.jpeg",
+      src: "detalhe12.jpeg",
       subtitle: "Lazer & Panorâmica",
       title: "Mergulhe na imensidão das águas suspensas sobre o Douro",
     },
@@ -363,7 +363,7 @@ export default function Quinta() {
             <div className="lg:col-span-6">
               <div className="relative h-[400px] md:h-[480px] w-full overflow-hidden rounded-[2px] shadow-xl group">
                 <img
-                  src="/quinta2.jpeg"
+                  src="quinta2.jpeg"
                   alt="Vinhas da Quinta"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
@@ -376,7 +376,7 @@ export default function Quinta() {
             <div className="lg:col-span-6 order-2 lg:order-1">
               <div className="relative h-[400px] md:h-[480px] w-full overflow-hidden rounded-[2px] shadow-xl group">
                 <img
-                  src="/b1.jpeg"
+                  src="b1.jpeg"
                   alt="Arquitetura e Conforto"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
@@ -426,14 +426,14 @@ export default function Quinta() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative h-[350px] md:h-[450px] overflow-hidden rounded-[2px] shadow-lg group">
               <img
-                src="/exp2.jpeg"
+                src="exp2.jpeg"
                 alt="Detalhe 1"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="relative h-[350px] md:h-[450px] overflow-hidden rounded-[2px] shadow-lg group">
               <img
-                src="/detalhe5.jpeg"
+                src="detalhe5.jpeg"
                 alt="Detalhe 2"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

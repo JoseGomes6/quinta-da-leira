@@ -45,7 +45,7 @@ export default function Experiencias() {
         "Mergulhe os seus sentidos em provas guiadas dos nossos raros vinhos do Porto e DOC Douro de produção própria, conduzidas pelo nosso enólogo principal entre antigas paredes de xisto.",
       detalhes:
         "Inclui uma seleção cuidada de 5 reservas de colheita acompanhadas por queijos regionais artesanais e enchidos. Duração: aprox. 2 horas.",
-      src: "/b1.jpeg",
+      src: "b1.jpeg",
     },
     {
       id: 2,
@@ -55,7 +55,7 @@ export default function Experiencias() {
         "Explore as dramáticas encostas classificadas como Património Mundial da UNESCO a pé ou de 4x4. Descubra as tradições vitivinícolas únicas do Vale do Douro passadas de geração em geração.",
       detalhes:
         "Excursão privada guiada pelas vinhas históricas, terminando com um brinde ao pôr do sol no miradouro panorâmico mais alto da propriedade.",
-      src: "/foto-hero1.jpeg",
+      src: "foto-hero1.jpeg",
     },
     {
       id: 3,
@@ -65,37 +65,7 @@ export default function Experiencias() {
         "Experimente a majestade do Rio Douro a bordo de um barco rabelo tradicional ou iate de luxo privado. Testemunhe as paisagens verticais que se erguem diretamente a partir da água.",
       detalhes:
         "Serviço de charter exclusivo completo com serviço de esmolder a bordo e cesto de piquenique gourmet.",
-      src: "/b5.jpeg",
-    },
-    {
-      id: 4,
-      titulo: "Masterclasses Gastronómicas",
-      subtitulo: "Sabores de Trás-os-Montes",
-      descricao:
-        "Junte-se ao nosso chef privativo para um workshop culinário intimista que celebra receitas regionais ancestrais elevadas com requinte contemporâneo e ervas biológicas da propriedade.",
-      detalhes:
-        "Preparação prática de pratos tradicionais harmonizados na perfeição com as nossas seleções exclusivas de vinho.",
-      src: "/b2.jpeg",
-    },
-    {
-      id: 5,
-      titulo: "Retiros de Bem-Estar e Holísticos",
-      subtitulo: "Serenidade Absoluta",
-      descricao:
-        "Realinhe o corpo e a mente com sessões privadas de ioga no terraço, massagens ao ar livre com vista sobre o vale e momentos tranquilos de silêncio absoluto.",
-      detalhes:
-        "Programas de bem-estar personalizados e tratamentos orgânicos concebidos para harmonizar com a natureza circundante.",
-      src: "/b3.jpeg",
-    },
-    {
-      id: 6,
-      titulo: "Passeios de Helicóptero",
-      subtitulo: "O Vale Visto do Céu",
-      descricao:
-        "Descole rumo aos céus para uma perspetiva aérea inesquecível do sinuoso rio Douro, intermináveis vinhas em socalcos e quintas históricas escondidas.",
-      detalhes:
-        "Partida direta a partir do heliporto privado da propriedade. Disponível para voos panorâmicos ou transferes personalizados.",
-      src: "/hero-noite.png",
+      src: "b5.jpeg",
     },
   ];
 
@@ -269,7 +239,7 @@ export default function Experiencias() {
             <div className="lg:col-span-7">
               <div className="relative h-[450px] md:h-[600px] w-full overflow-hidden rounded-[2px] shadow-2xl group">
                 <img
-                  src="/b1.jpeg"
+                  src="b1.jpeg"
                   alt="Experiências Quinta da Leira"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                 />

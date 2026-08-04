@@ -40,115 +40,115 @@ export default function Galeria() {
   const galeriaFotos = [
     {
       id: 1,
-      src: "/detalhe1.jpeg",
+      src: "detalhe1.jpeg",
       titulo: "A Imponência dos Socalcos",
       span: "md:col-span-2 md:row-span-2",
     },
     {
       id: 2,
-      src: "/pool1.jpeg",
+      src: "pool1.jpeg",
       titulo: "A Quinta ao Luar",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 3,
-      src: "/detalhe7.jpeg",
+      src: "detalhe7.jpeg",
       titulo: "Silêncio nas Vinhas",
       span: "md:col-span-1 md:row-span-2",
     },
     {
       id: 4,
-      src: "/detalhe4.jpeg",
+      src: "detalhe4.jpeg",
       titulo: "Suíte do Sobral",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 5,
-      src: "/detalhe2.jpeg",
+      src: "detalhe2.jpeg",
       titulo: "Villa do Penedo",
       span: "md:col-span-2 md:row-span-1",
     },
     {
       id: 6,
-      src: "/detalhe11.jpeg",
+      src: "detalhe11.jpeg",
       titulo: "Casa do Rio",
       span: "md:col-span-1 md:row-span-2",
     },
     {
       id: 7,
-      src: "/detalhe3.jpeg",
+      src: "detalhe3.jpeg",
       titulo: "Pôr do Sol Duriense",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 8,
-      src: "/detalhe5.jpeg",
+      src: "detalhe5.jpeg",
       titulo: "Detalhes de Autor",
       span: "md:col-span-2 md:row-span-1",
     },
     {
       id: 9,
-      src: "/detalhe6.jpeg",
+      src: "detalhe6.jpeg",
       titulo: "Conforto e Natureza",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 10,
-      src: "/detalhe10.jpeg",
+      src: "detalhe10.jpeg",
       titulo: "Geometria da Terra",
       span: "md:col-span-1 md:row-span-2",
     },
     {
       id: 11,
-      src: "/detalhe8.jpeg",
+      src: "detalhe8.jpeg",
       titulo: "Arquitetura em Xisto",
       span: "md:col-span-2 md:row-span-2",
     },
     {
       id: 12,
-      src: "/detalhe9.jpeg",
+      src: "detalhe9.jpeg",
       titulo: "Horizontes Infinitos",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 13,
-      src: "/detalhe13.jpeg",
+      src: "detalhe13.jpeg",
       titulo: "Exclusividade Absoluta",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 14,
-      src: "/detalhe18.jpeg",
+      src: "detalhe18.jpeg",
       titulo: "Refúgio do Douro",
       span: "md:col-span-1 md:row-span-2",
     },
     {
       id: 15,
-      src: "/detalhe12.jpeg",
+      src: "detalhe12.jpeg",
       titulo: "Instantes de Paz",
       span: "md:col-span-2 md:row-span-1",
     },
     {
       id: 16,
-      src: "/detalhe16.jpeg",
+      src: "detalhe16.jpeg",
       titulo: "Pormenores Íntimos",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 17,
-      src: "/detalhe17.jpeg",
+      src: "detalhe17.jpeg",
       titulo: "A Luz Dourada",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 18,
-      src: "/b1.jpeg",
+      src: "b1.jpeg",
       titulo: "Tradição Secular",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 19,
-      src: "/quinta5.jpeg",
+      src: "quinta5.jpeg",
       titulo: "A Essência da Leira",
       span: "md:col-span-1 md:row-span-1",
     },
@@ -325,7 +325,7 @@ export default function Galeria() {
             <div className="lg:col-span-7">
               <div className="relative h-[450px] md:h-[600px] w-full overflow-hidden rounded-[2px] shadow-2xl group">
                 <img
-                  src="/quinta3.jpeg"
+                  src="quinta3.jpeg"
                   alt="Galeria Quinta da Leira"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                 />

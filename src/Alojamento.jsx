@@ -21,10 +21,10 @@ export default function Alojamento() {
   }, []);
 
   const amenityImages = [
-    "/quarto1.jpeg",
-    "/detalhe13.jpeg",
-    "/banho1.jpeg",
-    "/detalhe18.jpeg",
+    "quarto1.jpeg",
+    "detalhe13.jpeg",
+    "banho1.jpeg",
+    "detalhe18.jpeg",
   ];
 
   const sectionRefs = useRef([]);
@@ -286,7 +286,7 @@ export default function Alojamento() {
 
         <div className="lg:col-span-7 relative min-h-[480px] lg:min-h-full">
           <img
-            src="/alojamento2.jpeg"
+            src="alojamento2.jpeg"
             alt="Alojamento Quinta da Leira"
             className="w-full h-full object-cover filter brightness-[0.98] contrast-[1.03] absolute inset-0"
           />
@@ -346,7 +346,7 @@ export default function Alojamento() {
           <div className="lg:col-span-6 relative">
             <div className="relative overflow-hidden aspect-[4/3] md:aspect-[4/5] shadow-2xl rounded-sm">
               <img
-                src="/alojamento3.jpeg"
+                src="alojamento3.jpeg"
                 alt="Quartos Quinta da Leira"
                 className="w-full h-full object-cover filter brightness-[0.98] hover:scale-105 transition-transform duration-1000"
               />

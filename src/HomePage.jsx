@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
 
 function App() {
-  const imgDia = "/foto-hero1.jpeg";
-  const imgNoite = "/hero-noite.png";
+  const imgDia = "foto-hero1.jpeg";
+  const imgNoite = "hero-noite.png";
 
   // --- DADOS DOS BUNGALOWS ---
   const bungalows = [
@@ -18,7 +18,7 @@ function App() {
       descricao:
         "Suspenso sobre as vinhas socalcadas, este refúgio oferece privacidade absoluta. Dispõe de um terraço privativo com piscina infinita aquecida e vistas ininterruptas sobre o Vale do Douro.",
       imagens: [
-        "/b1.jpeg",
+        "b1.jpeg",
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
@@ -46,7 +46,7 @@ function App() {
       descricao:
         "Rodeado por sobreiros seculares, esta suíte combina a arquitetura em madeira nobre com o conforto contemporâneo. O destaque é o jacuzzi exterior em madeira de cedro.",
       imagens: [
-        "/b2.jpeg",
+        "b2.jpeg",
         "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
@@ -74,7 +74,7 @@ function App() {
       descricao:
         "Construída em redor das formações rochosas naturais da quinta, esta villa oferece uma fusão única entre a rusticidade do granito e a elegância do design moderno.",
       imagens: [
-        "/b3.jpeg",
+        "b3.jpeg",
         "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
@@ -101,7 +101,7 @@ function App() {
       descricao:
         "Localizada na zona mais baixa da propriedade, junto ao riacho natural. Som relaxante da água corrente, fogueira privada ao ar livre e ambiente intimista.",
       imagens: [
-        "/b4.jpeg",
+        "b4.jpeg",
         "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
@@ -127,7 +127,7 @@ function App() {
       descricao:
         "A maior residência da quinta, perfeitamente orientada a oeste para capturar o espetáculo do pôr do sol sobre o rio Douro. Ideal para estadias prolongadas.",
       imagens: [
-        "/b5.jpeg",
+        "b5.jpeg",
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
@@ -154,6 +154,11 @@ function App() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
   const containerRef = useRef(null);
+
+  // Garante que o slider volta sempre a 50% ao montar o componente (evita o ecrã preto ao regressar de outras páginas)
+  useEffect(() => {
+    setSliderPos(50);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -532,6 +537,52 @@ function App() {
         </div>
       </section>
 
+      {/* ---------------- 4. EXPERIÊNCIAS ---------------- */}
+      <section className="py-32 max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+        <div className="text-center space-y-3">
+          <p className="text-[10px] tracking-[0.6em] uppercase text-[#A38250] font-semibold">
+            — 03 / Experiências
+          </p>
+          <h2 className="text-2xl md:text-4xl font-serif font-light text-[#1C2826] uppercase">
+            Vivências Exclusivas no Douro
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          {[
+            {
+              img: "exp1.jpeg",
+              text: "Provas de Vinho & Vinyard Tours Privados",
+            },
+            {
+              img: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80",
+              text: "Gastronomia Duriense com Chef Privado",
+            },
+            {
+              img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80",
+              text: "Percursos Pedestres e Passeios Fluviais",
+            },
+          ].map((exp, idx) => (
+            <div
+              key={idx}
+              className="group space-y-4 cursor-pointer overflow-hidden p-2 transition-all duration-500 hover:-translate-y-2"
+            >
+              <div className="h-80 overflow-hidden border border-stone-200/80 shadow-sm relative">
+                <img
+                  src={exp.img}
+                  alt={exp.text}
+                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              <p className="text-xs uppercase tracking-[0.2em] text-stone-700 font-medium pt-2 transition-colors duration-300 group-hover:text-[#A38250]">
+                {exp.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ---------------- MODAL DETALHES DO BUNGALOW ---------------- */}
       {selectedBungalow && (
         <div
@@ -693,52 +744,6 @@ function App() {
           </div>
         </div>
       )}
-
-      {/* ---------------- 4. EXPERIÊNCIAS ---------------- */}
-      <section className="py-32 max-w-7xl mx-auto px-6 md:px-12 space-y-16">
-        <div className="text-center space-y-3">
-          <p className="text-[10px] tracking-[0.6em] uppercase text-[#A38250] font-semibold">
-            — 03 / Experiências
-          </p>
-          <h2 className="text-2xl md:text-4xl font-serif font-light text-[#1C2826] uppercase">
-            Vivências Exclusivas no Douro
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          {[
-            {
-              img: "/exp1.jpeg",
-              text: "Provas de Vinho & Vinyard Tours Privados",
-            },
-            {
-              img: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80",
-              text: "Gastronomia Duriense com Chef Privado",
-            },
-            {
-              img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80",
-              text: "Percursos Pedestres e Passeios Fluviais",
-            },
-          ].map((exp, idx) => (
-            <div
-              key={idx}
-              className="group space-y-4 cursor-pointer overflow-hidden p-2 transition-all duration-500 hover:-translate-y-2"
-            >
-              <div className="h-80 overflow-hidden border border-stone-200/80 shadow-sm relative">
-                <img
-                  src={exp.img}
-                  alt={exp.text}
-                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <p className="text-xs uppercase tracking-[0.2em] text-stone-700 font-medium pt-2 transition-colors duration-300 group-hover:text-[#A38250]">
-                {exp.text}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ---------------- 5. FOOTER ---------------- */}
       <footer className="bg-[#0e1413] text-[#FBF9F5] pt-28 pb-16 px-6 md:px-12 border-t border-[#A38250]/30 relative overflow-hidden">
