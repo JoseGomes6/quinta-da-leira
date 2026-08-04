@@ -6,4 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/quinta-da-leira/",
+  build: {
+    outDir: "docs", // Gera a build na pasta docs em vez de dist
+  },
 });
