@@ -4,7 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage.jsx";
 import Quinta from "./Quinta.jsx"; // Importa o componente da Quinta
 import Alojamento from "./Alojamento.jsx"; // Importa o componente do Alojamento
+import Experiencias from "./Experiencias.jsx";
 import Galeria from "./Galeria.jsx"; // Importa o componente da Quinta
+import Contactos from "./Contactos.jsx"; // Importa o componente da Quinta
 import "./index.css";
 import "./i18n.js";
 
@@ -14,10 +16,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/a-quinta" element={<Quinta />} />{" "}
-        {/* Agora aponta para Quinta */}
         <Route path="/alojamento" element={<Alojamento />} />{" "}
         <Route path="/galeria" element={<Galeria />} />{" "}
-        {/* Agora aponta para Alojamento */}
+        <Route path="/experiencias" element={<Experiencias />} />{" "}
+        <Route path="/contactos" element={<Contactos />} />{" "}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

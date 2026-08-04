@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -40,123 +40,117 @@ export default function Galeria() {
   const galeriaFotos = [
     {
       id: 1,
-      src: "/foto-hero1.jpeg",
+      src: "/detalhe1.jpeg",
       titulo: "A Imponência dos Socalcos",
       span: "md:col-span-2 md:row-span-2",
     },
     {
       id: 2,
-      src: "/hero-noite.png",
+      src: "/pool1.jpeg",
       titulo: "A Quinta ao Luar",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 3,
-      src: "/b1.jpeg",
+      src: "/detalhe7.jpeg",
       titulo: "Silêncio nas Vinhas",
       span: "md:col-span-1 md:row-span-2",
     },
     {
       id: 4,
-      src: "/b2.jpeg",
+      src: "/detalhe4.jpeg",
       titulo: "Suíte do Sobral",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 5,
-      src: "/b3.jpeg",
+      src: "/detalhe2.jpeg",
       titulo: "Villa do Penedo",
       span: "md:col-span-2 md:row-span-1",
     },
     {
       id: 6,
-      src: "/b4.jpeg",
+      src: "/detalhe11.jpeg",
       titulo: "Casa do Rio",
       span: "md:col-span-1 md:row-span-2",
     },
     {
       id: 7,
-      src: "/b5.jpeg",
+      src: "/detalhe3.jpeg",
       titulo: "Pôr do Sol Duriense",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 8,
-      src: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe5.jpeg",
       titulo: "Detalhes de Autor",
       span: "md:col-span-2 md:row-span-1",
     },
     {
       id: 9,
-      src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe6.jpeg",
       titulo: "Conforto e Natureza",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 10,
-      src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe10.jpeg",
       titulo: "Geometria da Terra",
       span: "md:col-span-1 md:row-span-2",
     },
     {
       id: 11,
-      src: "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe8.jpeg",
       titulo: "Arquitetura em Xisto",
       span: "md:col-span-2 md:row-span-2",
     },
     {
       id: 12,
-      src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe9.jpeg",
       titulo: "Horizontes Infinitos",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 13,
-      src: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe13.jpeg",
       titulo: "Exclusividade Absoluta",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 14,
-      src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe18.jpeg",
       titulo: "Refúgio do Douro",
       span: "md:col-span-1 md:row-span-2",
     },
     {
       id: 15,
-      src: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe12.jpeg",
       titulo: "Instantes de Paz",
       span: "md:col-span-2 md:row-span-1",
     },
     {
       id: 16,
-      src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe16.jpeg",
       titulo: "Pormenores Íntimos",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 17,
-      src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+      src: "/detalhe17.jpeg",
       titulo: "A Luz Dourada",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 18,
-      src: "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80",
+      src: "/b1.jpeg",
       titulo: "Tradição Secular",
       span: "md:col-span-1 md:row-span-1",
     },
     {
       id: 19,
-      src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      src: "/quinta5.jpeg",
       titulo: "A Essência da Leira",
       span: "md:col-span-1 md:row-span-1",
-    },
-    {
-      id: 20,
-      src: "/foto-hero1.jpeg",
-      titulo: "Memórias do Vale",
-      span: "md:col-span-2 md:row-span-1",
     },
   ];
 
@@ -331,7 +325,7 @@ export default function Galeria() {
             <div className="lg:col-span-7">
               <div className="relative h-[450px] md:h-[600px] w-full overflow-hidden rounded-[2px] shadow-2xl group">
                 <img
-                  src="/foto-hero1.jpeg"
+                  src="/quinta3.jpeg"
                   alt="Galeria Quinta da Leira"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                 />
@@ -358,9 +352,6 @@ export default function Galeria() {
               </p>
               <div className="pt-4 border-t border-stone-300 flex items-center justify-between text-xs tracking-[0.25em] uppercase text-stone-500">
                 <span>Coleção Exclusiva</span>
-                <span className="text-[#A38250] font-semibold">
-                  20 Instantes
-                </span>
               </div>
             </div>
           </div>
@@ -442,49 +433,171 @@ export default function Galeria() {
         </div>
       )}
 
-      {/* ---------------- RODAPÉ IDÊNTICO / PROFISSIONAL ---------------- */}
-      <footer className="bg-[#141C1A] text-white py-20 px-6 md:px-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
-          <div className="space-y-3">
-            <span className="text-[10px] font-light tracking-[0.4em] uppercase text-amber-200">
-              Douro Valley
-            </span>
-            <h4 className="text-xl font-serif tracking-widest uppercase">
-              Quinta da Leira
-            </h4>
-            <p className="text-xs text-stone-400 font-light">
-              Alijó, Vila Real — Portugal
+      {/* ---------------- 5. FOOTER ---------------- */}
+      <footer className="bg-[#0e1413] text-[#FBF9F5] pt-28 pb-16 px-6 md:px-12 border-t border-[#A38250]/30 relative overflow-hidden">
+        {/* Linha superior de brilho dourado */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#A38250]/50 to-transparent" />
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 pb-20 border-b border-white/10">
+          {/* Coluna 1: Marca & Filosofia */}
+          <div className="md:col-span-5 space-y-6">
+            <div className="space-y-2">
+              <span className="text-[10px] font-light tracking-[0.5em] uppercase text-[#A38250]">
+                Douro Valley — Portugal
+              </span>
+              <h2 className="text-3xl font-serif font-light tracking-[0.15em] uppercase text-white">
+                Quinta da Leira
+              </h2>
+            </div>
+            <p className="text-stone-400 font-light leading-relaxed text-xs md:text-sm max-w-sm">
+              Um refúgio exclusivo de arquitetura contemporânea e silêncio
+              absoluto, suspenso sobre as encostas socalcadas do Vale do Douro.
             </p>
+
+            <div className="pt-2 flex flex-col space-y-4 text-xs font-mono tracking-widest text-[#A38250]">
+              <span>GPS: 41.1892° N, 7.4821° W</span>
+
+              {/* Secção Redes Sociais com Título e Ícone em baixo */}
+              <div className="space-y-2 pt-1">
+                <h4 className="text-[10px] font-sans font-semibold tracking-[0.3em] uppercase text-stone-300">
+                  Redes Sociais
+                </h4>
+                <div>
+                  <a
+                    href="https://www.instagram.com/quinta_da_leira_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2.5 text-xs font-sans tracking-wider text-stone-400 hover:text-[#A38250] transition-colors group"
+                  >
+                    <svg
+                      className="w-4 h-4 text-[#A38250] group-hover:scale-110 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                    <span className="border-b border-stone-600 pb-0.5 group-hover:border-[#A38250]">
+                      Instagram
+                    </span>
+                    <span className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[10px]">
+                      ↗
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="flex justify-center space-x-6 text-xs uppercase tracking-widest text-stone-300">
-            <Link
-              to="/a-quinta"
-              className="hover:text-amber-200 transition-colors"
-            >
-              Quinta
-            </Link>
-            <Link
-              to="/alojamento"
-              className="hover:text-amber-200 transition-colors"
-            >
-              Alojamento
-            </Link>
-            <Link
-              to="/contactos"
-              className="hover:text-amber-200 transition-colors"
-            >
-              Contactos
-            </Link>
+          {/* Coluna 2: Navegação Rápida */}
+          <div className="md:col-span-3 space-y-6">
+            <h3 className="text-[10px] font-semibold tracking-[0.4em] uppercase text-[#A38250]">
+              Navegação
+            </h3>
+            <ul className="space-y-3.5 text-xs tracking-[0.2em] uppercase text-stone-400 font-light">
+              <li>
+                <Link
+                  to="/a-quinta"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                >
+                  A Quinta
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/alojamento"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                >
+                  Alojamento
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/experiencias"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                >
+                  Experiências
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/galeria"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                >
+                  Galeria
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contactos"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                >
+                  Contactos
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          <div className="text-center md:text-right space-y-2">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400">
-              © 2026 Quinta da Leira
-            </p>
-            <p className="text-[9px] text-stone-500 uppercase tracking-widest">
-              Todos os direitos reservados
-            </p>
+          {/* Coluna 3: Contactos & Recepção */}
+          <div className="md:col-span-4 space-y-6">
+            <h3 className="text-[10px] font-semibold tracking-[0.4em] uppercase text-[#A38250]">
+              Recepção & Concierge
+            </h3>
+            <div className="space-y-4 text-xs text-stone-400 font-light leading-relaxed">
+              <div>
+                <strong className="font-medium text-white block uppercase tracking-[0.25em] text-[9px] mb-1">
+                  Morada
+                </strong>
+                <span>
+                  Rua Missões do Espirito Santo - Quinta da Leira
+                  <br />
+                  5050-068 Godim, Peso da Régua
+                </span>
+              </div>
+              <div>
+                <strong className="font-medium text-white block uppercase tracking-[0.25em] text-[9px] mb-1">
+                  Email Direto
+                </strong>
+                <a
+                  href="mailto:stay@quintadaleira.com"
+                  className="text-amber-200 hover:underline tracking-wider"
+                >
+                  stay@quintadaleira.com
+                </a>
+              </div>
+              <div>
+                <strong className="font-medium text-white block uppercase tracking-[0.25em] text-[9px] mb-1">
+                  Telefone / Concierge
+                </strong>
+                <span className="tracking-wider">+351 912 345 678</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Barra Inferior de Direitos e Termos */}
+        <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-stone-500 uppercase tracking-[0.25em] gap-4">
+          <p>
+            © {new Date().getFullYear()} Quinta da Leira. Todos os direitos
+            reservados.
+          </p>
+          <div className="flex space-x-8">
+            <Link
+              to="/privacidade"
+              className="hover:text-stone-300 transition-colors"
+            >
+              Política de Privacidade
+            </Link>
+            <Link
+              to="/termos"
+              className="hover:text-stone-300 transition-colors"
+            >
+              Termos e Condições
+            </Link>
           </div>
         </div>
       </footer>

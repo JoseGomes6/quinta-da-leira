@@ -10,7 +10,7 @@ export default function Alojamento() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const imageContainerRef = useRef(null);
 
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const currentLang = i18n.language;
 
   useEffect(() => {
@@ -21,10 +21,10 @@ export default function Alojamento() {
   }, []);
 
   const amenityImages = [
-    "/foto-hero1.jpeg",
-    "/foto-hero1.jpeg",
-    "/foto-hero1.jpeg",
-    "/foto-hero1.jpeg",
+    "/quarto1.jpeg",
+    "/detalhe13.jpeg",
+    "/banho1.jpeg",
+    "/detalhe18.jpeg",
   ];
 
   const sectionRefs = useRef([]);
@@ -80,7 +80,6 @@ export default function Alojamento() {
         "Wi-Fi",
         "Ar condicionado em todas as divisões",
         "Televisão em todos os quartos",
-        "Lareira",
         "Uso exclusivo de toda a propriedade",
       ],
     },
@@ -88,15 +87,10 @@ export default function Alojamento() {
       category: "Cozinha & Refeições",
       items: [
         "Cozinha totalmente equipada",
-        "Máquina de café",
+        "Fogão elétrico",
         "Chaleira elétrica",
-        "Torradeira",
-        "Forno",
         "Micro-ondas",
-        "Frigorífico",
-        "Congelador vertical",
-        "Mini cave",
-        "Máquina de gelo",
+        "Torradeira",
         "Máquina de lavar loiça",
         "Loiça completa",
         "Panelas e frigideiras",
@@ -104,34 +98,28 @@ export default function Alojamento() {
       ],
     },
     {
-      category: "Lavandaria & Apoio à Estadia",
+      category: "Comodidades da Casa de Banho",
       items: [
-        "Máquina de lavar roupa",
-        "Máquina de secar roupa",
-        "Ferro de engomar",
-        "Tábua de engomar",
-        "Cesto de roupa",
-        "Estendal / zona de secagem",
-        "Mantas extra",
         "Secador de cabelo",
-        "Dispensadores ou amenities base",
+        "Espelho anti-embaciamento",
+        "Amenities de banho de cortesia",
+        "Toalhas de alta qualidade",
+        "Toalheiros aquecidos",
+        "Duche efeito chuva",
+        "Papel higiénico e suporte",
       ],
     },
     {
       category: "Lazer & Exterior",
       items: [
-        "Piscina privada",
-        "Churrasqueira",
-        "Área de refeições exterior",
-        "Lounge exterior",
+        "Piscina exterior panorâmica",
         "Espreguiçadeiras",
-        "Chuveiro exterior",
-        "Vista sobre o Vale do Douro",
-        "Sala de jogos",
-        "Coluna de som Bluetooth",
-        "Lockbox / self check-in",
-        "Berço e cadeira alta",
-        "Carregador EV para 1 veículo",
+        "Amplo terraço",
+        "Varandas privativas com resguardo em ferro",
+        "Enquadramento com vinhas em socalcos",
+        "Arquitetura contemporânea e xisto tradicional",
+        "Vista panorâmica sobre a encosta do Douro",
+        "Zonas de circulação em patamares",
       ],
     },
   ];
@@ -298,7 +286,7 @@ export default function Alojamento() {
 
         <div className="lg:col-span-7 relative min-h-[480px] lg:min-h-full">
           <img
-            src="/foto-hero1.jpeg"
+            src="/alojamento2.jpeg"
             alt="Alojamento Quinta da Leira"
             className="w-full h-full object-cover filter brightness-[0.98] contrast-[1.03] absolute inset-0"
           />
@@ -341,14 +329,16 @@ export default function Alojamento() {
 
             <div className="space-y-6 text-sm text-stone-600 font-light leading-relaxed">
               <p>
-                A casa principal dispõe de zonas comuns generosas, incluindo uma
-                sala de estar com lareira acolhedora e uma sala de jogos
-                dedicada a momentos de convívio descontraído.
+                A propriedade dispõe de acolhedoras zonas comuns concebidas para
+                promover o convívio, complementadas por recantos que garantem a
+                tranquilidade de cada hóspede. Seja em estadia exclusiva ou em
+                reservas independentes, o conforto é sempre uma prioridade.
               </p>
               <p>
-                Os 6 banheiros distribuídos estrategicamente pela propriedade
-                garantem total autonomia e fluidez para todos os ocupantes, sem
-                comprometer a privacidade de nenhuma suite.
+                Os espaços foram meticulosamente desenhados para acolher com o
+                máximo conforto, oferecendo uma atmosfera intimista e
+                sofisticada onde cada hóspede se sente em casa, seja numa
+                escapada a dois ou em perfeita exclusividade.
               </p>
             </div>
           </div>
@@ -356,7 +346,7 @@ export default function Alojamento() {
           <div className="lg:col-span-6 relative">
             <div className="relative overflow-hidden aspect-[4/3] md:aspect-[4/5] shadow-2xl rounded-sm">
               <img
-                src="/foto-hero1.jpeg"
+                src="/alojamento3.jpeg"
                 alt="Quartos Quinta da Leira"
                 className="w-full h-full object-cover filter brightness-[0.98] hover:scale-105 transition-transform duration-1000"
               />
@@ -465,40 +455,76 @@ export default function Alojamento() {
         </div>
       </section>
 
-      <footer className="bg-[#141C1A] text-stone-300 pt-24 pb-16 px-6 md:px-12 border-t border-stone-800">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 pb-20 border-b border-stone-800/80">
+      {/* ---------------- 5. FOOTER ---------------- */}
+      <footer className="bg-[#0e1413] text-[#FBF9F5] pt-28 pb-16 px-6 md:px-12 border-t border-[#A38250]/30 relative overflow-hidden">
+        {/* Linha superior de brilho dourado */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#A38250]/50 to-transparent" />
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 pb-20 border-b border-white/10">
+          {/* Coluna 1: Marca & Filosofia */}
           <div className="md:col-span-5 space-y-6">
-            <div className="space-y-1">
-              <span className="text-[10px] font-light tracking-[0.4em] uppercase text-amber-200/80">
+            <div className="space-y-2">
+              <span className="text-[10px] font-light tracking-[0.5em] uppercase text-[#A38250]">
                 Douro Valley — Portugal
               </span>
-              <h2 className="text-2xl font-serif font-light tracking-[0.15em] text-white uppercase">
+              <h2 className="text-3xl font-serif font-light tracking-[0.15em] uppercase text-white">
                 Quinta da Leira
               </h2>
             </div>
-            <p className="text-xs text-stone-400 font-light leading-relaxed max-w-sm">
-              Um refúgio de arquitetura contemporânea e silêncio absoluto,
-              suspenso sobre as encostas socalcadas do Vale do Douro.
+            <p className="text-stone-400 font-light leading-relaxed text-xs md:text-sm max-w-sm">
+              Um refúgio exclusivo de arquitetura contemporânea e silêncio
+              absoluto, suspenso sobre as encostas socalcadas do Vale do Douro.
             </p>
-            <div className="text-xs font-mono tracking-widest text-amber-200/90 pt-2">
-              GPS: 41.1892° N, 7.4821° W
+
+            <div className="pt-2 flex flex-col space-y-4 text-xs font-mono tracking-widest text-[#A38250]">
+              <span>GPS: 41.1892° N, 7.4821° W</span>
+
+              {/* Secção Redes Sociais com Título e Ícone em baixo */}
+              <div className="space-y-2 pt-1">
+                <h4 className="text-[10px] font-sans font-semibold tracking-[0.3em] uppercase text-stone-300">
+                  Redes Sociais
+                </h4>
+                <div>
+                  <a
+                    href="https://www.instagram.com/quinta_da_leira_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2.5 text-xs font-sans tracking-wider text-stone-400 hover:text-[#A38250] transition-colors group"
+                  >
+                    <svg
+                      className="w-4 h-4 text-[#A38250] group-hover:scale-110 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                    <span className="border-b border-stone-600 pb-0.5 group-hover:border-[#A38250]">
+                      Instagram
+                    </span>
+                    <span className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[10px]">
+                      ↗
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
+          {/* Coluna 2: Navegação Rápida */}
           <div className="md:col-span-3 space-y-6">
-            <h3 className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white">
-              Explorar
+            <h3 className="text-[10px] font-semibold tracking-[0.4em] uppercase text-[#A38250]">
+              Navegação
             </h3>
-            <ul className="space-y-3 text-xs tracking-[0.15em] uppercase text-stone-400 font-light">
-              <li>
-                <Link to="/" className="hover:text-amber-200 transition-colors">
-                  Início
-                </Link>
-              </li>
+            <ul className="space-y-3.5 text-xs tracking-[0.2em] uppercase text-stone-400 font-light">
               <li>
                 <Link
                   to="/a-quinta"
-                  className="hover:text-amber-200 transition-colors"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
                 >
                   A Quinta
                 </Link>
@@ -506,7 +532,7 @@ export default function Alojamento() {
               <li>
                 <Link
                   to="/alojamento"
-                  className="hover:text-amber-200 transition-colors"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
                 >
                   Alojamento
                 </Link>
@@ -514,7 +540,7 @@ export default function Alojamento() {
               <li>
                 <Link
                   to="/experiencias"
-                  className="hover:text-amber-200 transition-colors"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
                 >
                   Experiências
                 </Link>
@@ -522,63 +548,75 @@ export default function Alojamento() {
               <li>
                 <Link
                   to="/galeria"
-                  className="hover:text-amber-200 transition-colors"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
                 >
                   Galeria
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contactos"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                >
+                  Contactos
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Coluna 3: Contactos & Recepção */}
           <div className="md:col-span-4 space-y-6">
-            <h3 className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white">
-              Contactos & Recepção
+            <h3 className="text-[10px] font-semibold tracking-[0.4em] uppercase text-[#A38250]">
+              Recepção & Concierge
             </h3>
-            <div className="space-y-3 text-xs text-stone-400 font-light leading-relaxed">
-              <p>
-                <strong className="font-medium text-stone-300 block uppercase tracking-wider text-[10px] mb-0.5">
+            <div className="space-y-4 text-xs text-stone-400 font-light leading-relaxed">
+              <div>
+                <strong className="font-medium text-white block uppercase tracking-[0.25em] text-[9px] mb-1">
                   Morada
                 </strong>
-                Lugar da Leira, Alijó
-                <br />
-                5070-000 Douro, Portugal
-              </p>
-              <p>
-                <strong className="font-medium text-stone-300 block uppercase tracking-wider text-[10px] mb-0.5">
+                <span>
+                  Rua Missões do Espirito Santo - Quinta da Leira
+                  <br />
+                  5050-068 Godim, Peso da Régua
+                </span>
+              </div>
+              <div>
+                <strong className="font-medium text-white block uppercase tracking-[0.25em] text-[9px] mb-1">
                   Email Direto
                 </strong>
                 <a
                   href="mailto:stay@quintadaleira.com"
-                  className="text-amber-200 hover:underline"
+                  className="text-amber-200 hover:underline tracking-wider"
                 >
                   stay@quintadaleira.com
                 </a>
-              </p>
-              <p>
-                <strong className="font-medium text-stone-300 block uppercase tracking-wider text-[10px] mb-0.5">
+              </div>
+              <div>
+                <strong className="font-medium text-white block uppercase tracking-[0.25em] text-[9px] mb-1">
                   Telefone / Concierge
                 </strong>
-                +351 912 345 678
-              </p>
+                <span className="tracking-wider">+351 912 345 678</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-stone-500 uppercase tracking-[0.2em] gap-4">
+        {/* Barra Inferior de Direitos e Termos */}
+        <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-stone-500 uppercase tracking-[0.25em] gap-4">
           <p>
             © {new Date().getFullYear()} Quinta da Leira. Todos os direitos
             reservados.
           </p>
-          <div className="flex space-x-6">
+          <div className="flex space-x-8">
             <Link
               to="/privacidade"
-              className="hover:text-stone-400 transition-colors"
+              className="hover:text-stone-300 transition-colors"
             >
               Política de Privacidade
             </Link>
             <Link
               to="/termos"
-              className="hover:text-stone-400 transition-colors"
+              className="hover:text-stone-300 transition-colors"
             >
               Termos e Condições
             </Link>
