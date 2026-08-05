@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom"; // <-- Mudou de BrowserRouter para HashRouter
 import HomePage from "./HomePage.jsx";
 import Quinta from "./Quinta.jsx";
 import Alojamento from "./Alojamento.jsx";
@@ -12,7 +12,8 @@ import "./i18n.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/quinta-da-leira">
+    {/* Com o HashRouter já não precisas do basename */}
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/a-quinta" element={<Quinta />} />
@@ -21,6 +22,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/experiencias" element={<Experiencias />} />
         <Route path="/contactos" element={<Contactos />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 );

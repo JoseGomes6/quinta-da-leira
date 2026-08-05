@@ -10,54 +10,44 @@ function App() {
   const bungalows = [
     {
       id: 1,
-      nome: "Refúgio da Vinha",
-      sub: "Piscina Privada & Vista Panorâmica",
-      area: "85 m²",
+      nome: "Residência Touriga Nacional",
+      sub: "Piscina Privada & Vista Panorâmica sobre as Vinhas",
       hospedes: "2 Adultos",
       cama: "King Size",
       descricao:
-        "Suspenso sobre as vinhas socalcadas, este refúgio oferece privacidade absoluta. Dispõe de um terraço privativo com piscina infinita aquecida e vistas ininterruptas sobre o Vale do Douro.",
+        "Suspenso sobre os socalcos debruçados para o Douro, este refúgio principal oferece privacidade absoluta. Dispõe de um generoso deck em madeira com piscina infinita privativa, enquadrada pela rusticidade das paredes de xisto e granito visíveis na paisagem.",
       imagens: [
         "b1.jpeg",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80",
+        "/alojamento1.jpeg",
+        "/alojamento2.jpeg",
+        "/detalhe1.jpeg",
       ],
       comodidades: [
         "Piscina Privada Aquecida",
         "Terraço Panorâmico",
         "Pequeno-Almoço Incluído",
-        "Lareira a Lenha",
+        "Lareira de Design",
         "Wi-Fi de Alta Velocidade",
         "Adega Privativa de Vinhos",
       ],
     },
     {
       id: 2,
-      nome: "Suíte do Sobral",
-      sub: "Jacuzzi Aquecido & Terraço Privativo",
-      area: "70 m²",
+      nome: "Suíte Arinto & Viosinho",
+      sub: "Jacuzzi Exterior & Deck Privativo",
       hospedes: "2 Adultos",
       cama: "King Size",
       descricao:
-        "Rodeado por sobreiros seculares, esta suíte combina a arquitetura em madeira nobre com o conforto contemporâneo. O destaque é o jacuzzi exterior em madeira de cedro.",
+        "Rodeado pela vegetação nativa e frentes de vidro que trazem a natureza para dentro de casa, este espaço combina a madeira nobre com o conforto contemporâneo. O destaque absoluto vai para o jacuzzi exterior em cedro integrado no deck.",
       imagens: [
         "b2.jpeg",
-        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80",
+        "/alojamento3.jpeg",
+        "/banho1.jpeg",
+        "/detalhe2.jpeg",
       ],
       comodidades: [
-        "Jacuzzi Exterior em Cedro",
-        "Deck em Madeira",
+        "Jacuzzi Exterior",
+        "Deck Privativo em Madeira",
         "Cafeteira Espresso",
         "Ar Condicionado",
         "Minibar Selecionado",
@@ -66,79 +56,64 @@ function App() {
     },
     {
       id: 3,
-      nome: "Villa do Penedo",
-      sub: "Sombra Secular & Privacidade Total",
-      area: "95 m²",
-      hospedes: "2 a 4 Hospedes",
-      cama: "1 King Size + Sofa Cama Premium",
+      nome: "Villa Tinta Roriz",
+      sub: "Arquitetura em Granito & Sombra Secular",
+      hospedes: "2 a 4 Hóspedes",
+      cama: "1 King Size + Sofá Cama Premium",
       descricao:
-        "Construída em redor das formações rochosas naturais da quinta, esta villa oferece uma fusão única entre a rusticidade do granito e a elegância do design moderno.",
+        "Construída em perfeita harmonia com as formações rochosas e penedos naturais da encosta duriense, esta villa funde a solidez do granito tradicional com linhas de decoração modernas e acolhedoras.",
       imagens: [
         "b3.jpeg",
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80",
+        "/detalhe3.jpeg",
+        "/detalhe4.jpeg",
+        "/detalhe5.jpeg",
       ],
       comodidades: [
         "Cozinha Equipada",
         "Sala de Estar Espaçosa",
         "Jardim Privativo",
-        "Chuveiro Rainshower Exterior",
+        "Chuveiro Exterior",
         "Estação de Carregamento EV",
       ],
     },
     {
       id: 4,
-      nome: "Casa do Rio",
-      sub: "Deck Sobre a Água & Lareira Externa",
-      area: "65 m²",
+      nome: "Refúgio Touriga Franca",
+      sub: "Ambiente Íntimo & Fogueira Exterior",
       hospedes: "2 Adultos",
       cama: "Queen Size",
       descricao:
-        "Localizada na zona mais baixa da propriedade, junto ao riacho natural. Som relaxante da água corrente, fogueira privada ao ar livre e ambiente intimista.",
+        "Um refúgio acolhedor com tons terrosos e iluminação intimista, pensado ao detalhe para momentos a dois. Conta com zonas de estar exteriores protegidas e vistas sublimes sobre os socalcos da região.",
       imagens: [
         "b4.jpeg",
-        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80",
+        "/detalhe6.jpeg",
+        "/detalhe7.jpeg",
+        "/detalhe8.jpeg",
       ],
       comodidades: [
-        "Deck suspenso sobre a água",
+        "Área de Estar Exterior",
         "Lareira Exterior (Fire Pit)",
         "Telescópio para Observação Noturna",
-        "Sistema de Som Bluetooth Marshall",
+        "Sistema de Som Bluetooth",
       ],
     },
     {
       id: 5,
-      nome: "Paz do Pôr do Sol",
-      sub: "Arquitetura em Granito & Vista Vale",
-      area: "110 m²",
-      hospedes: "4 Hospedes",
+      nome: "Casa Grande da Leira",
+      sub: "Residência Premium & Pôr do Sol no Douro",
+      hospedes: "4 Hóspedes",
       cama: "2 Suítes King Size",
       descricao:
-        "A maior residência da quinta, perfeitamente orientada a oeste para capturar o espetáculo do pôr do sol sobre o rio Douro. Ideal para estadias prolongadas.",
+        "A joia da coroa da propriedade, perfeitamente orientada a poente para capturar o espetáculo dourado do pôr do sol sobre o rio. Tetos altos em madeira, amplos vãos envidraçados e total exclusividade.",
       imagens: [
         "b5.jpeg",
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80",
+        "/detalhe9.jpeg",
+        "/detalhe10.jpeg",
+        "/detalhe11.jpeg",
       ],
       comodidades: [
         "Duas Suítes Independentes",
-        "Piscina Privada Panorâmica",
+        "Piscina Panorâmica Privativa",
         "Serviço de Chef Privado (Sob Pedido)",
         "Garagem Privada",
       ],
@@ -154,11 +129,6 @@ function App() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
   const containerRef = useRef(null);
-
-  // Garante que o slider volta sempre a 50% ao montar o componente (evita o ecrã preto ao regressar de outras páginas)
-  useEffect(() => {
-    setSliderPos(50);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -425,7 +395,7 @@ function App() {
           <div className="w-full bg-gradient-to-t from-black/85 via-black/40 to-transparent pt-32 pb-20 px-6 flex justify-center">
             <div className="max-w-2xl text-center space-y-3 animate-fade-up">
               <p className="text-[11px] font-semibold tracking-[0.5em] uppercase text-amber-100/90">
-                Alijó, Vale do Douro
+                Peso da Régua, Douro
               </p>
               <h1 className="text-2xl md:text-4xl lg:text-5xl font-serif font-light text-white leading-tight">
                 O Luxo do Silêncio no Coração do Douro
@@ -534,52 +504,6 @@ function App() {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* ---------------- 4. EXPERIÊNCIAS ---------------- */}
-      <section className="py-32 max-w-7xl mx-auto px-6 md:px-12 space-y-16">
-        <div className="text-center space-y-3">
-          <p className="text-[10px] tracking-[0.6em] uppercase text-[#A38250] font-semibold">
-            — 03 / Experiências
-          </p>
-          <h2 className="text-2xl md:text-4xl font-serif font-light text-[#1C2826] uppercase">
-            Vivências Exclusivas no Douro
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          {[
-            {
-              img: "exp1.jpeg",
-              text: "Provas de Vinho & Vinyard Tours Privados",
-            },
-            {
-              img: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80",
-              text: "Gastronomia Duriense com Chef Privado",
-            },
-            {
-              img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80",
-              text: "Percursos Pedestres e Passeios Fluviais",
-            },
-          ].map((exp, idx) => (
-            <div
-              key={idx}
-              className="group space-y-4 cursor-pointer overflow-hidden p-2 transition-all duration-500 hover:-translate-y-2"
-            >
-              <div className="h-80 overflow-hidden border border-stone-200/80 shadow-sm relative">
-                <img
-                  src={exp.img}
-                  alt={exp.text}
-                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <p className="text-xs uppercase tracking-[0.2em] text-stone-700 font-medium pt-2 transition-colors duration-300 group-hover:text-[#A38250]">
-                {exp.text}
-              </p>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -744,6 +668,52 @@ function App() {
           </div>
         </div>
       )}
+
+      {/* ---------------- 4. EXPERIÊNCIAS ---------------- */}
+      <section className="py-32 max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+        <div className="text-center space-y-3">
+          <p className="text-[10px] tracking-[0.6em] uppercase text-[#A38250] font-semibold">
+            — 03 / Experiências
+          </p>
+          <h2 className="text-2xl md:text-4xl font-serif font-light text-[#1C2826] uppercase">
+            Vivências Exclusivas no Douro
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          {[
+            {
+              img: "exp1.jpeg",
+              text: "Provas de Vinho & Vinyard Tours Privados",
+            },
+            {
+              img: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80",
+              text: "Gastronomia Duriense com Chef Privado",
+            },
+            {
+              img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80",
+              text: "Percursos Pedestres e Passeios Fluviais",
+            },
+          ].map((exp, idx) => (
+            <div
+              key={idx}
+              className="group space-y-4 cursor-pointer overflow-hidden p-2 transition-all duration-500 hover:-translate-y-2"
+            >
+              <div className="h-80 overflow-hidden border border-stone-200/80 shadow-sm relative">
+                <img
+                  src={exp.img}
+                  alt={exp.text}
+                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              <p className="text-xs uppercase tracking-[0.2em] text-stone-700 font-medium pt-2 transition-colors duration-300 group-hover:text-[#A38250]">
+                {exp.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ---------------- 5. FOOTER ---------------- */}
       <footer className="bg-[#0e1413] text-[#FBF9F5] pt-28 pb-16 px-6 md:px-12 border-t border-[#A38250]/30 relative overflow-hidden">

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import "./i18n";
 
 export default function Quinta() {
   const { t, i18n } = useTranslation();
