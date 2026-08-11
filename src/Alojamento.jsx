@@ -10,7 +10,7 @@ export default function Alojamento() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const imageContainerRef = useRef(null);
 
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
 
   useEffect(() => {
@@ -18,6 +18,16 @@ export default function Alojamento() {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   const amenityImages = [
@@ -65,12 +75,11 @@ export default function Alojamento() {
   };
 
   const navLinks = [
-    { to: "/", label: "Início" },
-    { to: "/a-quinta", label: "A Quinta" },
-    { to: "/alojamento", label: "Alojamento" },
-    { to: "/experiencias", label: "Experiências" },
-    { to: "/galeria", label: "Galeria" },
-    { to: "/contactos", label: "Contactos" },
+    { to: "/a-quinta", label: t("quinta") || "A Quinta" },
+    { to: "/alojamento", label: t("alojamento") || "Alojamento" },
+    { to: "/experiencias", label: t("experiencias") || "Experiências" },
+    { to: "/galeria", label: t("galeria") || "Galeria" },
+    { to: "/contactos", label: t("contactos") || "Contactos" },
   ];
 
   const amenitiesData = [
@@ -126,11 +135,28 @@ export default function Alojamento() {
 
   return (
     <div className="bg-[#FAF8F5] text-[#1A1F1E] antialiased font-light selection:bg-[#D4AF37]/20 selection:text-[#1A1F1E] overflow-x-hidden">
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+          animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-slide-down {
+          animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      `}</style>
+
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 animate-slide-down ${
           scrolled
-            ? "bg-[#182220]/95 backdrop-blur-md py-4 shadow-xl border-b border-white/10"
-            : "bg-[#182220]/80 backdrop-blur-sm py-6"
+            ? "bg-[#182220]/90 backdrop-blur-md py-4 shadow-xl border-b border-white/10"
+            : "bg-[#182220]/90 backdrop-blur-md py-6 border-b border-white/10"
         }`}
       >
         <nav className="flex justify-between items-center w-full max-w-7xl mx-auto px-6 md:px-12">
@@ -138,24 +164,37 @@ export default function Alojamento() {
             to="/"
             className="group flex flex-col items-start focus:outline-none"
           >
-            <span className="text-[10px] font-light tracking-[0.4em] uppercase text-white/80">
+            <span className="text-[10px] font-light tracking-[0.4em] uppercase text-white/80 group-hover:text-amber-200 transition-colors duration-500">
               Douro Valley
             </span>
-            <span className="text-lg md:text-xl font-serif tracking-[0.2em] uppercase text-white">
+            <span className="text-lg md:text-xl font-serif tracking-[0.2em] uppercase text-white drop-shadow-sm group-hover:tracking-[0.25em] transition-all duration-500">
               Quinta da Leira
             </span>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-8 xl:space-x-10 text-[10px] font-medium tracking-[0.25em] uppercase text-white/90">
-            {navLinks.slice(1).map((link, idx) => (
+            {navLinks.map((link, idx) => (
               <NavLink
                 key={idx}
                 to={link.to}
                 className={({ isActive }) =>
-                  `relative py-1 transition-colors hover:text-[#D4AF37] ${isActive ? "text-[#D4AF37] font-semibold" : ""}`
+                  `relative py-1 group/item transition-colors duration-300 hover:text-[#D4AF37] ${
+                    isActive ? "text-[#D4AF37] font-semibold" : ""
+                  }`
                 }
               >
-                {link.label}
+                {({ isActive }) => (
+                  <>
+                    {link.label}
+                    <span
+                      className={`absolute bottom-0 left-0 w-full h-[1px] bg-[#D4AF37] transform transition-transform duration-500 ease-out origin-center ${
+                        isActive
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover/item:scale-x-100"
+                      }`}
+                    />
+                  </>
+                )}
               </NavLink>
             ))}
 
@@ -164,7 +203,11 @@ export default function Alojamento() {
                 <button
                   key={l}
                   onClick={() => i18n.changeLanguage(l)}
-                  className={`hover:text-white ${currentLang?.toUpperCase() === l ? "text-white font-semibold border-b border-white" : ""}`}
+                  className={`hover:text-white transition-all duration-300 focus:outline-none ${
+                    currentLang?.toUpperCase() === l
+                      ? "text-white font-semibold border-b border-white/80 scale-105"
+                      : ""
+                  }`}
                 >
                   {l}
                 </button>
@@ -173,90 +216,81 @@ export default function Alojamento() {
 
             <Link
               to="/contactos"
-              className="border border-white/40 px-6 py-2.5 text-white transition-all hover:bg-white hover:text-[#1C2826] tracking-[0.25em] text-[9px] font-semibold uppercase"
+              className="relative group overflow-hidden border border-white/40 px-6 py-2.5 text-white transition-all duration-500 hover:border-white hover:shadow-lg"
             >
-              Reservar
+              <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+              <span className="relative z-10 group-hover:text-[#1C2826] transition-colors duration-500 tracking-[0.25em] text-[9px] font-semibold uppercase">
+                {t("reservar") || "Reservar"}
+              </span>
             </Link>
           </div>
 
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="flex flex-col space-y-1.5 w-8 h-8 lg:hidden focus:outline-none justify-center z-50"
+            className="flex flex-col justify-center items-end space-y-1.5 w-8 h-8 lg:hidden focus:outline-none group"
+            aria-label="Abrir Menu"
           >
-            <span className="block w-6 h-[1px] bg-white mx-auto transition-transform duration-300" />
-            <span className="block w-4 h-[1px] bg-white mx-auto transition-opacity duration-300" />
-            <span className="block w-6 h-[1px] bg-white mx-auto transition-transform duration-300" />
+            <span className="block w-6 h-[1px] bg-white group-hover:w-8 transition-all duration-300" />
+            <span className="block w-4 h-[1px] bg-white group-hover:w-8 transition-all duration-300" />
+            <span className="block w-6 h-[1px] bg-white group-hover:w-8 transition-all duration-300" />
           </button>
         </nav>
       </header>
 
-      <div
-        className={`fixed inset-0 bg-[#141C1A] z-50 transition-all duration-700 flex flex-col justify-between p-8 md:p-12 ${
-          isMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-      >
-        <div className="flex justify-between items-center w-full max-w-7xl mx-auto">
-          <div className="flex flex-col items-start">
-            <span className="text-[9px] font-light tracking-[0.4em] uppercase text-white/60">
-              Douro Valley
-            </span>
-            <span className="text-base font-serif tracking-[0.2em] uppercase text-white">
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-[#141C1A]/95 backdrop-blur-lg flex flex-col justify-between p-8 lg:hidden animate-fade-up">
+          <div className="flex justify-between items-center w-full">
+            <span className="text-[10px] font-light tracking-[0.4em] uppercase text-amber-200/80">
               Quinta da Leira
             </span>
-          </div>
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className="text-white/80 hover:text-white text-xs uppercase tracking-[0.3em] font-mono focus:outline-none flex items-center space-x-2"
-          >
-            <span>Fechar</span>
-            <span className="text-lg">×</span>
-          </button>
-        </div>
-
-        <div className="flex flex-col items-center justify-center space-y-6 text-center my-auto">
-          {navLinks.map((link, idx) => (
-            <NavLink
-              key={idx}
-              to={link.to}
+            <button
               onClick={() => setIsMenuOpen(false)}
-              className={({ isActive }) =>
-                `text-2xl md:text-3xl font-serif tracking-widest uppercase transition-colors hover:text-[#A38250] ${
-                  isActive ? "text-[#A38250]" : "text-white/90"
-                }`
-              }
+              className="w-10 h-10 bg-white/10 text-amber-200 rounded-full flex items-center justify-center border border-white/20 focus:outline-none"
+              aria-label="Fechar Menu"
             >
-              {link.label}
-            </NavLink>
-          ))}
-          <Link
-            to="/contactos"
-            onClick={() => setIsMenuOpen(false)}
-            className="mt-4 border border-[#A38250] px-8 py-3 text-white transition-all hover:bg-[#A38250] tracking-[0.25em] text-[10px] font-semibold uppercase"
-          >
-            Reservar Agora
-          </Link>
-        </div>
+              ✕
+            </button>
+          </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto w-full pt-8 border-t border-white/10 text-[10px] tracking-widest text-white/60 gap-4">
-          <div className="flex space-x-3">
-            {["PT", "EN", "FR", "ES", "IT"].map((l) => (
-              <button
-                key={l}
-                onClick={() => {
-                  i18n.changeLanguage(l);
-                  setIsMenuOpen(false);
-                }}
-                className={`hover:text-white ${currentLang?.toUpperCase() === l ? "text-white font-semibold border-b border-white" : ""}`}
+          <div className="flex flex-col space-y-6 text-left my-auto">
+            {navLinks.map((link, idx) => (
+              <NavLink
+                key={idx}
+                to={link.to}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-2xl font-serif font-light text-white hover:text-amber-200 tracking-wider transition-colors"
               >
-                {l}
-              </button>
+                {link.label}
+              </NavLink>
             ))}
           </div>
-          <p>© {new Date().getFullYear()} Quinta da Leira</p>
+
+          <div className="space-y-6 pt-6 border-t border-white/10">
+            <div className="flex items-center space-x-4 text-xs tracking-widest text-white/70">
+              {["PT", "EN", "FR", "ES", "IT"].map((l) => (
+                <button
+                  key={l}
+                  onClick={() => i18n.changeLanguage(l)}
+                  className={`hover:text-white transition-colors ${
+                    currentLang?.toUpperCase() === l
+                      ? "text-amber-200 font-semibold border-b border-amber-200"
+                      : ""
+                  }`}
+                >
+                  {l}
+                </button>
+              ))}
+            </div>
+            <Link
+              to="/contactos"
+              onClick={() => setIsMenuOpen(false)}
+              className="block w-full bg-amber-200 text-[#1C2826] text-center font-semibold py-3 text-xs tracking-[0.25em] uppercase"
+            >
+              {t("reservar") || "Reservar"}
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
 
       <section className="pt-32 md:pt-40 min-h-[92vh] grid grid-cols-1 lg:grid-cols-12 items-stretch">
         <div className="lg:col-span-5 flex flex-col justify-center px-8 md:px-16 py-16 space-y-10 bg-[#FAF8F5]">
@@ -455,13 +489,10 @@ export default function Alojamento() {
         </div>
       </section>
 
-      {/* ---------------- 5. FOOTER ---------------- */}
       <footer className="bg-[#0e1413] text-[#FBF9F5] pt-28 pb-16 px-6 md:px-12 border-t border-[#A38250]/30 relative overflow-hidden">
-        {/* Linha superior de brilho dourado */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#A38250]/50 to-transparent" />
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 pb-20 border-b border-white/10">
-          {/* Coluna 1: Marca & Filosofia */}
           <div className="md:col-span-5 space-y-6">
             <div className="space-y-2">
               <span className="text-[10px] font-light tracking-[0.5em] uppercase text-[#A38250]">
@@ -479,7 +510,6 @@ export default function Alojamento() {
             <div className="pt-2 flex flex-col space-y-4 text-xs font-mono tracking-widest text-[#A38250]">
               <span>GPS: 41.1892° N, 7.4821° W</span>
 
-              {/* Secção Redes Sociais com Título e Ícone em baixo */}
               <div className="space-y-2 pt-1">
                 <h4 className="text-[10px] font-sans font-semibold tracking-[0.3em] uppercase text-stone-300">
                   Redes Sociais
@@ -515,12 +545,19 @@ export default function Alojamento() {
             </div>
           </div>
 
-          {/* Coluna 2: Navegação Rápida */}
           <div className="md:col-span-3 space-y-6">
             <h3 className="text-[10px] font-semibold tracking-[0.4em] uppercase text-[#A38250]">
               Navegação
             </h3>
             <ul className="space-y-3.5 text-xs tracking-[0.2em] uppercase text-stone-400 font-light">
+              <li>
+                <Link
+                  to="/"
+                  className="hover:text-white transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                >
+                  Início
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/a-quinta"
@@ -564,7 +601,6 @@ export default function Alojamento() {
             </ul>
           </div>
 
-          {/* Coluna 3: Contactos & Recepção */}
           <div className="md:col-span-4 space-y-6">
             <h3 className="text-[10px] font-semibold tracking-[0.4em] uppercase text-[#A38250]">
               Recepção & Concierge
@@ -601,7 +637,6 @@ export default function Alojamento() {
           </div>
         </div>
 
-        {/* Barra Inferior de Direitos e Termos */}
         <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-stone-500 uppercase tracking-[0.25em] gap-4">
           <p>
             © {new Date().getFullYear()} Quinta da Leira. Todos os direitos
